@@ -22,6 +22,9 @@ public:
 
   // measurement covariance matrix
   Eigen::MatrixXd R_;
+  
+  // measurement state
+  Eigen::VectorXd hx_;
 
   /**
    * Constructor
