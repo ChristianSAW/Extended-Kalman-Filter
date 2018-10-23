@@ -30,6 +30,8 @@ public:
   * Kalman Filter update and prediction math lives in here.
   */
   KalmanFilter ekf_;
+  
+  Eigen::MatrixXd RMSE_Collect;
 
 private:
   // check whether the tracking toolbox was initialized or not (first measurement)
@@ -38,6 +40,10 @@ private:
   // previous timestamp
   long long previous_timestamp_;
 
+  // acceleration noise components 
+  float sigma_ax;
+  float sigma_ay;
+  
   // tool object used to compute Jacobian and RMSE
   Tools tools;
   Eigen::MatrixXd R_laser_;
